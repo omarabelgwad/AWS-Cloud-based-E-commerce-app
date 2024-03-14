@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gradprojectapptrial-dev-173533-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112607808:role/amplify-gradprojectapptrial-dev-173533-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112607808:role/amplify-gradprojectapptrial-dev-173533-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-gradprojectapptrial-dev-173533-deployment",
+      "UnauthRoleName": "amplify-gradprojectapptrial-dev-173533-unauthRole",
+      "StackName": "amplify-gradprojectapptrial-dev-173533",
+      "StackId": "arn:aws:cloudformation:eu-north-1:471112607808:stack/amplify-gradprojectapptrial-dev-173533/c9e31070-ccf1-11ee-83a9-0a1b85bf14e4",
+      "AmplifyAppId": "d1ejvkepikmnqn"
+    },
+    "categories": {
+      "auth": {
+        "gradprojectapptrial1e146aeb": {}
+      },
+      "api": {
+        "gradprojectapptrial": {}
+      }
+    }
+  }
+}

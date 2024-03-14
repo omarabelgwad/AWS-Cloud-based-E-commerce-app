@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "gradprojectapptrial",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-gradprojectapptrial-dev-173533-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/7d7cfeb4ff3239c3941555e2decdd064bbea7e22"
+}

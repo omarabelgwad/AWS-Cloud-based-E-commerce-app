@@ -1,0 +1,90 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gradprojectapptrial-dev-173533-authRole",
+      "UnauthRoleArn": "arn:aws:iam::471112607808:role/amplify-gradprojectapptrial-dev-173533-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::471112607808:role/amplify-gradprojectapptrial-dev-173533-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-gradprojectapptrial-dev-173533-deployment",
+      "UnauthRoleName": "amplify-gradprojectapptrial-dev-173533-unauthRole",
+      "StackName": "amplify-gradprojectapptrial-dev-173533",
+      "StackId": "arn:aws:cloudformation:eu-north-1:471112607808:stack/amplify-gradprojectapptrial-dev-173533/c9e31070-ccf1-11ee-83a9-0a1b85bf14e4",
+      "AmplifyAppId": "d1ejvkepikmnqn"
+    }
+  },
+  "api": {
+    "gradprojectapptrial": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "wr3pgjltdjcsnbeuklxi3v6evu",
+        "GraphQLAPIEndpointOutput": "https://bqbhkhtr5vgmjhvex36lvaxaju.appsync-api.eu-north-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-br2ldqs4fbaufaz6wosutzicfq"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2024-02-17T22:15:04.486Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gradprojectapptrial-dev-173533-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apigradprojectapptrial"
+      }
+    }
+  },
+  "auth": {
+    "gradprojectapptrial1e146aeb": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-gradprojectapptrial-dev-173533-deployment/amplify-cfn-templates/auth/gradprojectapptrial1e146aeb-cloudformation-template.json",
+        "logicalId": "authgradprojectapptrial1e146aeb"
+      },
+      "lastPushTimeStamp": "2024-02-17T22:15:07.516Z",
+      "output": {
+        "UserPoolId": "eu-north-1_EqbiSZ4aw",
+        "AppClientIDWeb": "738iop1jcq5944mrs4pmc4qui3",
+        "AppClientID": "4n0g68j9c2oleir48or2nsptvu",
+        "IdentityPoolId": "eu-north-1:988fc056-4e52-4185-8a8d-8f3d242b28be",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-north-1:471112607808:userpool/eu-north-1_EqbiSZ4aw",
+        "IdentityPoolName": "gradprojectapptrial1e146aeb_identitypool_1e146aeb__dev",
+        "UserPoolName": "gradprojectapptrial1e146aeb_userpool_1e146aeb"
+      },
+      "lastPushDirHash": "Wf3cCOoCZ4tdimJk0LEvXaCUNKQ="
+    }
+  }
+}
