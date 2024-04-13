@@ -4,12 +4,11 @@ const amplifyconfig = '''{
     "api": {
         "plugins": {
             "awsAPIPlugin": {
-                "gradprojectapptrial": {
+                "uiawsnew": {
                     "endpointType": "GraphQL",
-                    "endpoint": "https://bqbhkhtr5vgmjhvex36lvaxaju.appsync-api.eu-north-1.amazonaws.com/graphql",
+                    "endpoint": "https://5wbjiqyu6rdmpc4muguc62xpie.appsync-api.eu-north-1.amazonaws.com/graphql",
                     "region": "eu-north-1",
-                    "authorizationType": "API_KEY",
-                    "apiKey": "da2-br2ldqs4fbaufaz6wosutzicfq"
+                    "authorizationType": "AWS_IAM"
                 }
             }
         }
@@ -24,52 +23,44 @@ const amplifyconfig = '''{
                 },
                 "AppSync": {
                     "Default": {
-                        "ApiUrl": "https://bqbhkhtr5vgmjhvex36lvaxaju.appsync-api.eu-north-1.amazonaws.com/graphql",
-                        "Region": "eu-north-1",
-                        "AuthMode": "API_KEY",
-                        "ApiKey": "da2-br2ldqs4fbaufaz6wosutzicfq",
-                        "ClientDatabasePrefix": "gradprojectapptrial_API_KEY"
-                    },
-                    "gradprojectapptrial_AWS_IAM": {
-                        "ApiUrl": "https://bqbhkhtr5vgmjhvex36lvaxaju.appsync-api.eu-north-1.amazonaws.com/graphql",
+                        "ApiUrl": "https://5wbjiqyu6rdmpc4muguc62xpie.appsync-api.eu-north-1.amazonaws.com/graphql",
                         "Region": "eu-north-1",
                         "AuthMode": "AWS_IAM",
-                        "ClientDatabasePrefix": "gradprojectapptrial_AWS_IAM"
+                        "ClientDatabasePrefix": "uiawsnew_AWS_IAM"
                     }
                 },
                 "CredentialsProvider": {
                     "CognitoIdentity": {
                         "Default": {
-                            "PoolId": "eu-north-1:988fc056-4e52-4185-8a8d-8f3d242b28be",
+                            "PoolId": "eu-north-1:4c1b10b1-1c8d-4640-9b85-0eadc5197228",
                             "Region": "eu-north-1"
                         }
                     }
                 },
                 "CognitoUserPool": {
                     "Default": {
-                        "PoolId": "eu-north-1_EqbiSZ4aw",
-                        "AppClientId": "4n0g68j9c2oleir48or2nsptvu",
+                        "PoolId": "eu-north-1_yJR38L82N",
+                        "AppClientId": "75seno6k288grb5qqb9hur0ol2",
                         "Region": "eu-north-1"
                     }
                 },
                 "Auth": {
                     "Default": {
                         "authenticationFlowType": "USER_SRP_AUTH",
-                        "socialProviders": [],
-                        "usernameAttributes": [
-                            "EMAIL",
-                            "PHONE_NUMBER"
-                        ],
-                        "signupAttributes": [
-                            "EMAIL"
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [
+                            "SMS"
                         ],
                         "passwordProtectionSettings": {
                             "passwordPolicyMinLength": 8,
                             "passwordPolicyCharacters": []
                         },
-                        "mfaConfiguration": "OFF",
-                        "mfaTypes": [
-                            "SMS"
+                        "signupAttributes": [
+                            "EMAIL"
+                        ],
+                        "socialProviders": [],
+                        "usernameAttributes": [
+                            "EMAIL"
                         ],
                         "verificationMechanisms": [
                             "EMAIL"

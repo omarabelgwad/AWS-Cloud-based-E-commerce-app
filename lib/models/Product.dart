@@ -1,3 +1,4 @@
+
 /*
 * Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
@@ -42,104 +43,104 @@ class Product extends amplify_core.Model {
 
   @override
   getInstanceType() => classType;
-  
+
   @Deprecated('[getId] is being deprecated in favor of custom primary key feature. Use getter [modelIdentifier] to get model identifier.')
   @override
   String getId() => id;
-  
+
   ProductModelIdentifier get modelIdentifier {
-      return ProductModelIdentifier(
+    return ProductModelIdentifier(
         id: id
-      );
+    );
   }
-  
+
   String? get productName {
     return _productName;
   }
-  
+
   String? get productID {
     return _productID;
   }
-  
+
   String? get productPrice {
     return _productPrice;
   }
-  
+
   int? get ProductLefts {
     return _ProductLefts;
   }
-  
+
   String? get productCategory {
     return _productCategory;
   }
-  
+
   String? get productImagePath {
     return _productImagePath;
   }
-  
+
   String? get productDescription {
     return _productDescription;
   }
-  
+
   List<OrderItem>? get orderedProductRelation {
     return _orderedProductRelation;
   }
-  
+
   List<Shelf>? get productShelfRelation {
     return _productShelfRelation;
   }
-  
+
   amplify_core.TemporalDateTime? get createdAt {
     return _createdAt;
   }
-  
+
   amplify_core.TemporalDateTime? get updatedAt {
     return _updatedAt;
   }
-  
+
   const Product._internal({required this.id, productName, productID, productPrice, ProductLefts, productCategory, productImagePath, productDescription, orderedProductRelation, productShelfRelation, createdAt, updatedAt}): _productName = productName, _productID = productID, _productPrice = productPrice, _ProductLefts = ProductLefts, _productCategory = productCategory, _productImagePath = productImagePath, _productDescription = productDescription, _orderedProductRelation = orderedProductRelation, _productShelfRelation = productShelfRelation, _createdAt = createdAt, _updatedAt = updatedAt;
-  
+
   factory Product({String? id, String? productName, String? productID, String? productPrice, int? ProductLefts, String? productCategory, String? productImagePath, String? productDescription, List<OrderItem>? orderedProductRelation, List<Shelf>? productShelfRelation}) {
     return Product._internal(
-      id: id == null ? amplify_core.UUID.getUUID() : id,
-      productName: productName,
-      productID: productID,
-      productPrice: productPrice,
-      ProductLefts: ProductLefts,
-      productCategory: productCategory,
-      productImagePath: productImagePath,
-      productDescription: productDescription,
-      orderedProductRelation: orderedProductRelation != null ? List<OrderItem>.unmodifiable(orderedProductRelation) : orderedProductRelation,
-      productShelfRelation: productShelfRelation != null ? List<Shelf>.unmodifiable(productShelfRelation) : productShelfRelation);
+        id: id == null ? amplify_core.UUID.getUUID() : id,
+        productName: productName,
+        productID: productID,
+        productPrice: productPrice,
+        ProductLefts: ProductLefts,
+        productCategory: productCategory,
+        productImagePath: productImagePath,
+        productDescription: productDescription,
+        orderedProductRelation: orderedProductRelation != null ? List<OrderItem>.unmodifiable(orderedProductRelation) : orderedProductRelation,
+        productShelfRelation: productShelfRelation != null ? List<Shelf>.unmodifiable(productShelfRelation) : productShelfRelation);
   }
-  
+
   bool equals(Object other) {
     return this == other;
   }
-  
+
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Product &&
-      id == other.id &&
-      _productName == other._productName &&
-      _productID == other._productID &&
-      _productPrice == other._productPrice &&
-      _ProductLefts == other._ProductLefts &&
-      _productCategory == other._productCategory &&
-      _productImagePath == other._productImagePath &&
-      _productDescription == other._productDescription &&
-      DeepCollectionEquality().equals(_orderedProductRelation, other._orderedProductRelation) &&
-      DeepCollectionEquality().equals(_productShelfRelation, other._productShelfRelation);
+        id == other.id &&
+        _productName == other._productName &&
+        _productID == other._productID &&
+        _productPrice == other._productPrice &&
+        _ProductLefts == other._ProductLefts &&
+        _productCategory == other._productCategory &&
+        _productImagePath == other._productImagePath &&
+        _productDescription == other._productDescription &&
+        DeepCollectionEquality().equals(_orderedProductRelation, other._orderedProductRelation) &&
+        DeepCollectionEquality().equals(_productShelfRelation, other._productShelfRelation);
   }
-  
+
   @override
   int get hashCode => toString().hashCode;
-  
+
   @override
   String toString() {
     var buffer = new StringBuffer();
-    
+
     buffer.write("Product {");
     buffer.write("id=" + "$id" + ", ");
     buffer.write("productName=" + "$_productName" + ", ");
@@ -152,24 +153,24 @@ class Product extends amplify_core.Model {
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
     buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
     buffer.write("}");
-    
+
     return buffer.toString();
   }
-  
+
   Product copyWith({String? productName, String? productID, String? productPrice, int? ProductLefts, String? productCategory, String? productImagePath, String? productDescription, List<OrderItem>? orderedProductRelation, List<Shelf>? productShelfRelation}) {
     return Product._internal(
-      id: id,
-      productName: productName ?? this.productName,
-      productID: productID ?? this.productID,
-      productPrice: productPrice ?? this.productPrice,
-      ProductLefts: ProductLefts ?? this.ProductLefts,
-      productCategory: productCategory ?? this.productCategory,
-      productImagePath: productImagePath ?? this.productImagePath,
-      productDescription: productDescription ?? this.productDescription,
-      orderedProductRelation: orderedProductRelation ?? this.orderedProductRelation,
-      productShelfRelation: productShelfRelation ?? this.productShelfRelation);
+        id: id,
+        productName: productName ?? this.productName,
+        productID: productID ?? this.productID,
+        productPrice: productPrice ?? this.productPrice,
+        ProductLefts: ProductLefts ?? this.ProductLefts,
+        productCategory: productCategory ?? this.productCategory,
+        productImagePath: productImagePath ?? this.productImagePath,
+        productDescription: productDescription ?? this.productDescription,
+        orderedProductRelation: orderedProductRelation ?? this.orderedProductRelation,
+        productShelfRelation: productShelfRelation ?? this.productShelfRelation);
   }
-  
+
   Product copyWithModelFieldValues({
     ModelFieldValue<String?>? productName,
     ModelFieldValue<String?>? productID,
@@ -182,47 +183,47 @@ class Product extends amplify_core.Model {
     ModelFieldValue<List<Shelf>?>? productShelfRelation
   }) {
     return Product._internal(
-      id: id,
-      productName: productName == null ? this.productName : productName.value,
-      productID: productID == null ? this.productID : productID.value,
-      productPrice: productPrice == null ? this.productPrice : productPrice.value,
-      ProductLefts: ProductLefts == null ? this.ProductLefts : ProductLefts.value,
-      productCategory: productCategory == null ? this.productCategory : productCategory.value,
-      productImagePath: productImagePath == null ? this.productImagePath : productImagePath.value,
-      productDescription: productDescription == null ? this.productDescription : productDescription.value,
-      orderedProductRelation: orderedProductRelation == null ? this.orderedProductRelation : orderedProductRelation.value,
-      productShelfRelation: productShelfRelation == null ? this.productShelfRelation : productShelfRelation.value
+        id: id,
+        productName: productName == null ? this.productName : productName.value,
+        productID: productID == null ? this.productID : productID.value,
+        productPrice: productPrice == null ? this.productPrice : productPrice.value,
+        ProductLefts: ProductLefts == null ? this.ProductLefts : ProductLefts.value,
+        productCategory: productCategory == null ? this.productCategory : productCategory.value,
+        productImagePath: productImagePath == null ? this.productImagePath : productImagePath.value,
+        productDescription: productDescription == null ? this.productDescription : productDescription.value,
+        orderedProductRelation: orderedProductRelation == null ? this.orderedProductRelation : orderedProductRelation.value,
+        productShelfRelation: productShelfRelation == null ? this.productShelfRelation : productShelfRelation.value
     );
   }
-  
-  Product.fromJson(Map<String, dynamic> json)  
-    : id = json['id'],
-      _productName = json['productName'],
-      _productID = json['productID'],
-      _productPrice = json['productPrice'],
-      _ProductLefts = (json['ProductLefts'] as num?)?.toInt(),
-      _productCategory = json['productCategory'],
-      _productImagePath = json['productImagePath'],
-      _productDescription = json['productDescription'],
-      _orderedProductRelation = json['orderedProductRelation'] is List
-        ? (json['orderedProductRelation'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => OrderItem.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _productShelfRelation = json['productShelfRelation'] is List
-        ? (json['productShelfRelation'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Shelf.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
-  
+
+  Product.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        _productName = json['productName'],
+        _productID = json['productID'],
+        _productPrice = json['productPrice'],
+        _ProductLefts = (json['ProductLefts'] as num?)?.toInt(),
+        _productCategory = json['productCategory'],
+        _productImagePath = json['productImagePath'],
+        _productDescription = json['productDescription'],
+        _orderedProductRelation = json['orderedProductRelation'] is List
+            ? (json['orderedProductRelation'] as List)
+            .where((e) => e?['serializedData'] != null)
+            .map((e) => OrderItem.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
+            .toList()
+            : null,
+        _productShelfRelation = json['productShelfRelation'] is List
+            ? (json['productShelfRelation'] as List)
+            .where((e) => e?['serializedData'] != null)
+            .map((e) => Shelf.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
+            .toList()
+            : null,
+        _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
+        _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+
   Map<String, dynamic> toJson() => {
     'id': id, 'productName': _productName, 'productID': _productID, 'productPrice': _productPrice, 'ProductLefts': _ProductLefts, 'productCategory': _productCategory, 'productImagePath': _productImagePath, 'productDescription': _productDescription, 'orderedProductRelation': _orderedProductRelation?.map((OrderItem? e) => e?.toJson()).toList(), 'productShelfRelation': _productShelfRelation?.map((Shelf? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
-  
+
   Map<String, Object?> toMap() => {
     'id': id,
     'productName': _productName,
@@ -248,108 +249,108 @@ class Product extends amplify_core.Model {
   static final PRODUCTIMAGEPATH = amplify_core.QueryField(fieldName: "productImagePath");
   static final PRODUCTDESCRIPTION = amplify_core.QueryField(fieldName: "productDescription");
   static final ORDEREDPRODUCTRELATION = amplify_core.QueryField(
-    fieldName: "orderedProductRelation",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'OrderItem'));
+      fieldName: "orderedProductRelation",
+      fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'OrderItem'));
   static final PRODUCTSHELFRELATION = amplify_core.QueryField(
-    fieldName: "productShelfRelation",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Shelf'));
+      fieldName: "productShelfRelation",
+      fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Shelf'));
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Product";
     modelSchemaDefinition.pluralName = "Products";
-    
+
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
-        authStrategy: amplify_core.AuthStrategy.PUBLIC,
-        operations: const [
-          amplify_core.ModelOperation.CREATE,
-          amplify_core.ModelOperation.UPDATE,
-          amplify_core.ModelOperation.DELETE,
-          amplify_core.ModelOperation.READ
-        ])
+          authStrategy: amplify_core.AuthStrategy.PUBLIC,
+          operations: const [
+            amplify_core.ModelOperation.CREATE,
+            amplify_core.ModelOperation.UPDATE,
+            amplify_core.ModelOperation.DELETE,
+            amplify_core.ModelOperation.READ
+          ])
     ];
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTNAME,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTNAME,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTID,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTID,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTPRICE,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTPRICE,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTLEFTS,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.int)
+        key: Product.PRODUCTLEFTS,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.int)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTCATEGORY,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTCATEGORY,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTIMAGEPATH,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTIMAGEPATH,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
-      key: Product.PRODUCTDESCRIPTION,
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+        key: Product.PRODUCTDESCRIPTION,
+        isRequired: false,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: Product.ORDEREDPRODUCTRELATION,
-      isRequired: false,
-      ofModelName: 'OrderItem',
-      associatedKey: OrderItem.PRODUCTID
+        key: Product.ORDEREDPRODUCTRELATION,
+        isRequired: false,
+        ofModelName: 'OrderItem',
+        associatedKey: OrderItem.PRODUCTID
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: Product.PRODUCTSHELFRELATION,
-      isRequired: false,
-      ofModelName: 'Shelf',
-      associatedKey: Shelf.PRODUCTID
+        key: Product.PRODUCTSHELFRELATION,
+        isRequired: false,
+        ofModelName: 'Shelf',
+        associatedKey: Shelf.PRODUCTID
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'createdAt',
-      isRequired: false,
-      isReadOnly: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+        fieldName: 'createdAt',
+        isRequired: false,
+        isReadOnly: true,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
-    
+
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'updatedAt',
-      isRequired: false,
-      isReadOnly: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+        fieldName: 'updatedAt',
+        isRequired: false,
+        isReadOnly: true,
+        ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
   });
 }
 
 class _ProductModelType extends amplify_core.ModelType<Product> {
   const _ProductModelType();
-  
+
   @override
   Product fromJson(Map<String, dynamic> jsonData) {
     return Product.fromJson(jsonData);
   }
-  
+
   @override
   String modelName() {
     return 'Product';
@@ -366,35 +367,35 @@ class ProductModelIdentifier implements amplify_core.ModelIdentifier<Product> {
   /** Create an instance of ProductModelIdentifier using [id] the primary key. */
   const ProductModelIdentifier({
     required this.id});
-  
+
   @override
   Map<String, dynamic> serializeAsMap() => (<String, dynamic>{
     'id': id
   });
-  
+
   @override
   List<Map<String, dynamic>> serializeAsList() => serializeAsMap()
-    .entries
-    .map((entry) => (<String, dynamic>{ entry.key: entry.value }))
-    .toList();
-  
+      .entries
+      .map((entry) => (<String, dynamic>{ entry.key: entry.value }))
+      .toList();
+
   @override
   String serializeAsString() => serializeAsMap().values.join('#');
-  
+
   @override
   String toString() => 'ProductModelIdentifier(id: $id)';
-  
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    
+
     return other is ProductModelIdentifier &&
-      id == other.id;
+        id == other.id;
   }
-  
+
   @override
   int get hashCode =>
-    id.hashCode;
+      id.hashCode;
 }

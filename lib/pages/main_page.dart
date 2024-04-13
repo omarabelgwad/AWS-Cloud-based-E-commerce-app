@@ -26,7 +26,7 @@ class MainPage extends StatefulWidget {
     for(int i=0;i<productIdList.length;i++)
     {
       print("Now i am getting product $i");
-      Future<Product?> currentProductFuture=queryItem(Product(id: productIdList[i]));
+      Future<Product?> currentProductFuture=queryItem(Product(id: productIdList[i], productName: ''));
       Product? currentProduct=await currentProductFuture;
       print("product "+i.toString()+" is "+currentProduct.toString());
       MainPage.productsList.add(currentProduct!);

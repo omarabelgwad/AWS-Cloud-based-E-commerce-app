@@ -24,9 +24,9 @@ class _ProfilePageState extends State<ProfilePage> {
     return Authenticator(
       signUpForm: SignUpForm.custom(
         fields: [
-          SignUpFormField.name(),
-          SignUpFormField.gender(),
-          SignUpFormField.email(required: true),
+
+          SignUpFormField.username(),
+
           SignUpFormField.password(),
         ],
       ),
