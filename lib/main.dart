@@ -34,6 +34,7 @@ class _MyAppState extends State<MyApp> {
     // ProductGetClass().getProducts();
     return MaterialApp(
       home:  BoardPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
   void _configureAmplify() async {
@@ -50,17 +51,4 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-}
-
-myQuery() async {
-  final blogId = Product.ID;
-
-  final request = ModelQueries.list(
-    Product.classType,
-    where: Product.ID.eq("5e6aa133-e56c-46ce-b9a3-59c33330d6fa"),
-  );
-  final response = await Amplify.API
-      .query(request: request)
-      .response;
-  final data = response.data?.items ?? <Product?>[];
 }
