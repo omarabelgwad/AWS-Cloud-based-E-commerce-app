@@ -7,8 +7,8 @@ import 'normal_text.dart';
 class ProductBuilder extends StatelessWidget {
   Product returnedObject;
   ProductBuilder(this.returnedObject);
-
-
+  static List<Product> cartProductsList=[];
+  static List<Product> favouriteProductsList=[];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,48 +17,39 @@ class ProductBuilder extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
 
         children: [
-          Card(
-            margin: EdgeInsets.all(3),
-            clipBehavior: Clip.antiAlias,
-            elevation: 5,
-            child: Stack(
-              children: [
-                GestureDetector(
-                  child: Image.asset(
-                    returnedObject.productImagePath.toString(),
-                    fit: BoxFit.scaleDown,
-                    height: 80,
-                    width: 80,
-                  ),
-                  onTap: () => CircleAvatar(),
+          Stack(
+            children: [Card(
+              margin: EdgeInsets.all(3),
+              clipBehavior: Clip.antiAlias,
+              elevation: 5,
+              child: GestureDetector(
+                child: Image.asset(
+                  returnedObject.productImagePath.toString(),
+                  fit: BoxFit.scaleDown,
+                  height: 80,
+                  width: 80,
                 ),
-                Positioned(
-                  left: 130,
-                  bottom: 105,
-                  child: IconButton(
-                    icon: Icon(
-                      size: 30,
-                      Icons.favorite,
-                      color: Colors.white,
-                    ),
-                    onPressed: () => _addToFavourites(),
-                  ),
-                ),
-                Positioned(
-                  left: 130,
-                  bottom: -5,
-                  child: IconButton(
-                    icon: Icon(
-                      size: 30,
+                onTap: () => CircleAvatar(),
+              ),
+            ),
+
+              Positioned(
+                top: 50,
+                left: 50,
+                child: IconButton(
+                  icon: CircleAvatar(
+                    radius: 15,
+                    backgroundColor: Colors.orange,
+                    child: Icon(
+                      size: 20,
                       Icons.add_circle_outline_sharp,
                       color: Colors.white,
                     ),
-                    onPressed: () => _addToCart(),
                   ),
+                  onPressed: () => _addToCart(returnedObject),
                 ),
-
-              ],
-            ),
+              ),
+            ]
           ),
           SizedBox(
             width: 8,
@@ -68,19 +59,30 @@ class ProductBuilder extends StatelessWidget {
             children: [
               titleText(yourTitle: returnedObject.productName.toString(), fontSize: 22),
               normalText(yourTitle: returnedObject.productCategory.toString(), fontSize: 15),
-              SizedBox(height: 6,),
+
               Row(
                 children: [
                   titleText(
-                      yourTitle: "69000 EGP", fontSize: 17),
+                      yourTitle: returnedObject.productPrice.toString(), fontSize: 17),
 
                   SizedBox(width: 20,),
                   titleText(
                       yourTitle: returnedObject.ProductLefts.toString() + " left",
                       fontSize: 15),
+                  SizedBox(width: 50,),
+                  IconButton(
+                    icon: Icon(
+                      size: 20,
+                      Icons.favorite,
+                      color: Colors.grey,
+
+                    ),
+
+                    onPressed: () => _addToFavourites(returnedObject),
+                  )
                 ],
               ),
-              SizedBox(height: 6,),
+
               titleText(yourTitle: "Desciption: " , fontSize: 15),
 
               Container(
@@ -107,5 +109,12 @@ class ProductBuilder extends StatelessWidget {
     );
   }
 }
-_addToFavourites() {}
-_addToCart() {}
+_addToFavourites(Product favProduct) {
+  ProductBuilder.favouriteProductsList.add(favProduct);
+  print("product "+favProduct.productName.toString()+" is added to favourites");
+
+}
+_addToCart(Product cartProduct) {
+  ProductBuilder.cartProductsList.add(cartProduct);
+  print("product "+cartProduct.productName.toString()+" is added to cart");
+}
