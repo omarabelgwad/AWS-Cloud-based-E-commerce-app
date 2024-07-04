@@ -4,6 +4,7 @@ import 'package:amplify_datastore/amplify_datastore.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:ui/pages/board_page.dart';
+import 'package:ui/pages/main_page.dart';
 
 import 'amplifyconfiguration.dart';
 
@@ -46,6 +47,7 @@ class _MyAppState extends State<MyApp> {
       await Amplify.addPlugins([api, authCognitoPlugin,datastorePlugin]); // Add the API plugin
       await Amplify.configure(amplifyconfig);
       safePrint('Successfully configured');
+      MainPage.getProductObject();
     } on Exception catch (e) {
       safePrint('Error configuring Amplify: $e');
     }

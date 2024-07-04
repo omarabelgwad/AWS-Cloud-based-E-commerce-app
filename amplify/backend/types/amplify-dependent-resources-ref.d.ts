@@ -1,13 +1,12 @@
 export type AmplifyDependentResourcesAttributes = {
   "api": {
-    "gradprojectapptrial": {
+    "uiawsnew": {
       "GraphQLAPIEndpointOutput": "string",
-      "GraphQLAPIIdOutput": "string",
-      "GraphQLAPIKeyOutput": "string"
+      "GraphQLAPIIdOutput": "string"
     }
   },
   "auth": {
-    "gradprojectapptrial1e146aeb": {
+    "uiawsnew96222153": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "IdentityPoolId": "string",

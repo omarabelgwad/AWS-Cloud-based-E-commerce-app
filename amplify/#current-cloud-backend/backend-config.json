@@ -1,20 +1,12 @@
 {
   "api": {
-    "gradprojectapptrial": {
+    "uiawsnew": {
       "dependsOn": [],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AWS_IAM"
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "api key description"
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AWS_IAM"
           }
         }
       },
@@ -23,7 +15,7 @@
     }
   },
   "auth": {
-    "gradprojectapptrial1e146aeb": {
+    "uiawsnew96222153": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -40,8 +32,7 @@
         ],
         "socialProviders": [],
         "usernameAttributes": [
-          "EMAIL",
-          "PHONE_NUMBER"
+          "EMAIL"
         ],
         "verificationMechanisms": [
           "EMAIL"

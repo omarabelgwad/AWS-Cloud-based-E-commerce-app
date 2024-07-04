@@ -8,6 +8,7 @@ Future<void> signOutCurrentUser() async {
   } else if (result is CognitoFailedSignOut) {
     safePrint('Error signing user out: ${result.exception.message}');
   }
+
 }
 
 Future<void> signOutGlobally() async {

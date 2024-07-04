@@ -6,7 +6,6 @@ import 'package:ui/components/title_text.dart';
 
 import '../data_manipution/product_list.dart';
 import '../data_manipution/product_manipulation.dart';
-import '../models/Product.dart';
 import 'main_page.dart';
 
 class BoardPage extends StatelessWidget {
@@ -56,7 +55,7 @@ class BoardPage extends StatelessWidget {
                   fontSize: 20,
                   ),
               onTap:() async {
-                MainPage.getProductObject();
+               // MainPage.getProductObject();
                 //await Future.delayed(Duration(seconds: 2));
                 Navigator.push(myContext!, MaterialPageRoute(builder: (context) => MainPage(),));
 

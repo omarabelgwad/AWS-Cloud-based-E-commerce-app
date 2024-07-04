@@ -115,5 +115,3 @@ Widget productDescription(String imagePath) {
     ),
   );
 }
-
-

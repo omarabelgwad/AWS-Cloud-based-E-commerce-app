@@ -152,12 +152,12 @@
         }
       }
     },
-    "apigradprojectapptrial": {
+    "apiuiawsnew": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-gradprojectapptrial-dev-173533-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-uiawsnew-dev-12934-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "Parameters": {
-          "AppSyncApiName": "gradprojectapptrial",
+          "AppSyncApiName": "uiawsnew",
           "DynamoDBBillingMode": "PAY_PER_REQUEST",
           "DynamoDBEnableServerSideEncryption": false,
           "authRoleName": {
@@ -166,21 +166,21 @@
           "unauthRoleName": {
             "Ref": "UnauthRoleName"
           },
-          "S3DeploymentBucket": "amplify-gradprojectapptrial-dev-173533-deployment",
-          "S3DeploymentRootKey": "amplify-appsync-files/7d7cfeb4ff3239c3941555e2decdd064bbea7e22",
+          "S3DeploymentBucket": "amplify-uiawsnew-dev-12934-deployment",
+          "S3DeploymentRootKey": "amplify-appsync-files/57835427fc138bb31d9b2472ebba9c03b8fb5118",
           "env": "dev"
         }
       }
     },
-    "authgradprojectapptrial1e146aeb": {
+    "authuiawsnew96222153": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-gradprojectapptrial-dev-173533-deployment/amplify-cfn-templates/auth/gradprojectapptrial1e146aeb-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-uiawsnew-dev-12934-deployment/amplify-cfn-templates/auth/uiawsnew96222153-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "gradprojectapptrial1e146aeb_identitypool_1e146aeb",
+          "identityPoolName": "uiawsnew96222153_identitypool_96222153",
           "allowUnauthenticatedIdentities": false,
-          "resourceNameTruncated": "gradpr1e146aeb",
-          "userPoolName": "gradprojectapptrial1e146aeb_userpool_1e146aeb",
+          "resourceNameTruncated": "uiawsn96222153",
+          "userPoolName": "uiawsnew96222153_userpool_96222153",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -197,13 +197,13 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "gradpr1e146aeb_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "uiawsn96222153_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "1e146aeb",
-          "resourceName": "gradprojectapptrial1e146aeb",
+          "sharedId": "96222153",
+          "resourceName": "uiawsnew96222153",
           "authSelections": "identityPoolAndUserPool",
           "useDefault": "default",
-          "usernameAttributes": "email, phone_number",
+          "usernameAttributes": "email",
           "userPoolGroupList": "",
           "serviceName": "Cognito",
           "usernameCaseSensitive": false,
@@ -230,7 +230,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authgradprojectapptrial1e146aeb"
+        "authuiawsnew96222153"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -340,7 +340,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authgradprojectapptrial1e146aeb",
+            "authuiawsnew96222153",
             "Outputs.IdentityPoolId"
           ]
         },

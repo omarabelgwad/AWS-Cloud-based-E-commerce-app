@@ -1,5 +1,6 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:amplify_authenticator/amplify_authenticator.dart';
+import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ui/components/circle_button.dart';
@@ -9,6 +10,8 @@ import '../authentication/delete_user.dart';
 import '../authentication/sign_out.dart';
 import '../authentication/signed_user.dart';
 import '../components/rectangular_button.dart';
+import '../data_manipution/customer/create_customer.dart';
+import 'main_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -22,22 +25,45 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Authenticator(
+
+
       signUpForm: SignUpForm.custom(
+
         fields: [
-
+          SignUpFormField.name(),
+          SignUpFormField.familyName(),
           SignUpFormField.username(),
-
           SignUpFormField.password(),
         ],
+
       ),
+      signInForm: SignInForm.custom(
+
+        fields: [
+          SignInFormField.username(),
+          SignUpFormField.password(),
+        ],
+
+      ),
+
+
+
+
       child: MaterialApp(
+
         builder: Authenticator.builder(),
         home: Scaffold(
           appBar: AppBar(
             leading: IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () {
+                if(MainPage.productsList.isEmpty)
+                  {
+                    MainPage.getProductObject();
+                  }
                 Navigator.pop(context);
+
+                //createCustomer();
               },
             ),
 
@@ -64,6 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontSize: 20,
                   ),
                   onTap: () {
+
                     signOutCurrentUser();
                   },
                 ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ui/pages/place_order_page.dart';
 
 import '../components/normal_text.dart';
 import '../components/product_builder.dart';
 import '../components/title_text.dart';
 import '../models/Product.dart';
+
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key, Widget});
@@ -22,6 +24,7 @@ class _CartPageState extends State<CartPage> {
           child: titleText(yourTitle: 'Your Cart is Empty ', fontSize: 22));
     }
     else {
+
       return Stack(
         children: [ Column(
           children: [
@@ -118,6 +121,8 @@ class _CartPageState extends State<CartPage> {
             bottom: 10,
            left: 120,
            child:  GestureDetector(
+             onTap:() =>Navigator.push(context!, MaterialPageRoute(builder: (context) => PlaceOrder(),)),
+
 
              child: Container(
                width: 150,
@@ -128,7 +133,7 @@ class _CartPageState extends State<CartPage> {
                  borderRadius: BorderRadius.circular(30),
                ),
                child:Text(
-                 "Place Order",
+                 "Checkout",
                  textAlign: TextAlign.center,
                  style: GoogleFonts.aBeeZee(
                      fontSize: 20,
@@ -149,6 +154,7 @@ class _CartPageState extends State<CartPage> {
 }
 _removeFromCart(Product removedProduct) {
   ProductBuilder.cartProductsList.remove(removedProduct);
+  ProductBuilder.cartProductsIDs.remove(removedProduct.id);
   print("product "+removedProduct.productName.toString()+" is removed from cart");
 
 }

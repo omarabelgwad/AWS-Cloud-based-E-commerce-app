@@ -2,12 +2,12 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "gradprojectapptrial",
+  "projectName": "uiawsnew",
   "version": "3.1",
   "frontend": "flutter",
   "flutter": {
     "config": {
-      "ResDir": "y"
+      "ResDir": "./lib/"
     }
   }
 }

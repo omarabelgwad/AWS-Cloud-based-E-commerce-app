@@ -5,12 +5,15 @@ import 'package:ui/components/title_text.dart';
 import '../models/Product.dart';
 import 'normal_text.dart';
 class ProductBuilder extends StatelessWidget {
+
   Product returnedObject;
   ProductBuilder(this.returnedObject);
   static List<Product> cartProductsList=[];
   static List<Product> favouriteProductsList=[];
+  static List<String> cartProductsIDs=[];
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.only(left: 13),
       child: Row(
@@ -116,5 +119,7 @@ _addToFavourites(Product favProduct) {
 }
 _addToCart(Product cartProduct) {
   ProductBuilder.cartProductsList.add(cartProduct);
+  ProductBuilder.cartProductsIDs.add(cartProduct.id.substring(0,36));
   print("product "+cartProduct.productName.toString()+" is added to cart");
+  print("ID id" +cartProduct.id.substring(0,36));
 }

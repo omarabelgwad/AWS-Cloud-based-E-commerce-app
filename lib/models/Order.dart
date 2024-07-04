@@ -63,7 +63,7 @@ class Order extends amplify_core.Model {
   
   const Order._internal({required this.id, orderID, orderDate, createdAt, updatedAt}): _orderID = orderID, _orderDate = orderDate, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Order({String? id, int? orderID, amplify_core.TemporalDate? orderDate}) {
+  factory Order({String? id, int? orderID, amplify_core.TemporalDate? orderDate, required amplify_core.TemporalDateTime order_date, required String order_id, required String customerID, required List OrderProducts, required String status}) {
     return Order._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       orderID: orderID,
